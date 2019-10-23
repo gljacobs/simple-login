@@ -1,0 +1,17 @@
+#navbar {
+    position: fixed;
+    background: white;
+}
+
+p {
+    float: right;
+    color: gray;
+    padding: 0 1rem;
+}
+
+nav .brand-logo {
+    padding: 0 1rem;
+    font-weight: bold;
+    color: gray;
+}
+

@@ -3,15 +3,30 @@ import './style.css';
 
 function Login() {
     return (
-        <div id="logcard" class="row">
-            <div class="col s12 m12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Login Here</span>
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Brought to you by EZ Login</a>
+        <div id="logcard" className="row">
+            <div className="col s12 m12">
+                <div className="card">
+                    <div className="card-content">
+                        <span className="card-title activator grey-text text-darken-4">Login Here</span>
+                        <div className="row">
+                            <form id="login" className="col s12 ">
+                                <div className="row">
+                                    <div className="input-field col s8 offset-s2">
+                                        <input id="namein" type="text" className="validate" />
+                                        <label for="namein">Email</label>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="input-field col s8 offset-s2">
+                                        <input id="password" type="password" className="validate" />
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div className="card-action">
+                            <a href="#">Brought to you by EZ Login</a>
+                        </div>
                     </div>
                 </div>
             </div>

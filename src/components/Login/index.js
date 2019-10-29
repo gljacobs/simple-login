@@ -30,7 +30,7 @@ function Login() {
                             </form>
                         </div>
                         <div className="card-action">
-                            <a href="#">Don't have an account? Sign up here!</a>
+                            <a href="#">Don't have an account? Sign up here</a>
                         </div>
                     </div>
                 </div>

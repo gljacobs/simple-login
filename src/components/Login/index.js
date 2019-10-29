@@ -22,10 +22,15 @@ function Login() {
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
+                                <div className="row">
+                                    <button class="btn waves-effect waves-light col s4 offset-s4" type="submit" name="action">Login
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
                             </form>
                         </div>
                         <div className="card-action">
-                            <a href="#">Brought to you by EZ Login</a>
+                            <a href="#">Don't have an account? Sign up here!</a>
                         </div>
                     </div>
                 </div>

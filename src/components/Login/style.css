@@ -1,10 +1,15 @@
 #logcard {
     text-align: center;
-    width: 60%;
+    width: 35rem;
 }
 
 .card {
     margin-top: 10rem;
+}
+
+.card .card-content .card-title {
+    font-weight: 500;
+    color: grey !important;
 }
 
 #login {

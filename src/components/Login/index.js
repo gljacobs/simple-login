@@ -23,8 +23,8 @@ function Login() {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <button class="btn waves-effect waves-light col s4 offset-s4" type="submit" name="action">Login
-                                        <i class="material-icons right">send</i>
+                                    <button className="btn waves-effect waves-light col s4 offset-s4" type="submit" name="action">Login
+                                        <i className="material-icons right">send</i>
                                     </button>
                                 </div>
                             </form>

@@ -27,7 +27,7 @@ module.exports = {
     },
     create: function (req, res) {
         console.log(`Creating user ${req.body.id}`)
-        db.users.create({
+        db.Users.create({
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
@@ -41,7 +41,7 @@ module.exports = {
     },
     remove: function (req, res) {
         console.log(`Removing user ${req.params.id}`)
-        db.users.destroy({
+        db.Users.destroy({
             where: {
                 id: req.params.id,
             }

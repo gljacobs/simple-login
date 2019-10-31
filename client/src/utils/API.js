@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
     // Saves a user to the database
-    createUser: function (email, password, name) {
-        return axios.post("/api/users", { email: email, passsword: password, name: name });
+    createUser: function (name, email, password) {
+        return axios.post("/api/users", { name: name, email: email, password: password });
     },
     // Deletes the user with the given id
     deleteUser: function (id) {

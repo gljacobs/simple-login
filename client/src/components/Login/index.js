@@ -1,12 +1,16 @@
 import React from 'react';
 import './style.css';
 import testdata from '../../testdata.json'
+import API from '../../utils/API';
 
 class Login extends React.Component {
     state = {
         user: "",
         userIn: "",
         password: "",
+    }
+    componentDidMount() {
+        API.createUser("Gabe Jaco", "gj@gmail.com", "password")
     }
 
     handleChange = (event) => {

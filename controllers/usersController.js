@@ -7,26 +7,18 @@ module.exports = {
             where: {
                 id: req.params.id,
             }
-        }).then(function (users) {
-            res.json(users.map(user => {
-                return { name: user.name, }
-            }))
+        }).then(function (user) {
+            res.json(user)
         });
     },
     findAll: function (req, res) {
         console.log("Getting all users")
-        db.Users.findAll({
-            where: {
-                id: "id",
-            }
-        }).then(function (users) {
-            res.json(users.map(user => {
-                return { name: user.name, }
-            }))
+        db.Users.findAll().then(function (users) {
+            res.json(users)
         });
     },
     create: function (req, res) {
-        console.log(`Creating user ${req.body.id}`)
+        console.log(`Creating user ${req.body.email}`)
         db.Users.create({
             name: req.body.name,
             email: req.body.email,
@@ -40,7 +32,7 @@ module.exports = {
             });
     },
     remove: function (req, res) {
-        console.log(`Removing user ${req.params.id}`)
+        console.log(`Removing user ${req.params.email}`)
         db.Users.destroy({
             where: {
                 id: req.params.id,

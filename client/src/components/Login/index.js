@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import testdata from '../../testdata.json'
+// import testdata from '../../testdata.json'
 import API from '../../utils/API';
 
 class Login extends React.Component {
@@ -10,22 +10,31 @@ class Login extends React.Component {
         password: "",
     }
     componentDidMount() {
-        API.createUser("Gabe Jaco", "gj@gmail.com", "password")
+        // API.createUser("Gabe Jaco", "gj@gmail.com", "password");
+        // API.createUser("Mariah Jaco", "mj@gmail.com", "password");
     }
 
     handleChange = (event) => {
         let value = event.target.value;
         const name = event.target.name;
 
-        this.setState({[name]: value})
+        this.setState({ [name]: value })
     }
 
-    handleLogin = () => {
-        testdata.map((user) => {
-            if(user.email === this.state.userIn && user.password === this.state.password) {
-                alert("Hello " + user.name + "!")
-            }
-        })
+    handleLogin = (event) => {
+        event.preventDefault();
+        API.getUsers()
+            .then(testdata =>
+                testdata.map((user) => {
+                    console.log(user);
+                    
+                    if (user.email === this.state.userIn && user.password === this.state.password) {
+                        alert("Hello " + user.name + "!")
+                    }
+                })
+            ).catch(err => {
+                console.log(err)
+            })
     }
 
     render() {
@@ -39,13 +48,13 @@ class Login extends React.Component {
                                 <form id="login" className="col s12 ">
                                     <div className="row">
                                         <div className="input-field col s8 offset-s2">
-                                            <input id="namein" type="text" className="validate" name="userIn" value={this.state.userIn} onChange={this.handleChange}/>
+                                            <input id="namein" type="text" className="validate" name="userIn" value={this.state.userIn} onChange={this.handleChange} />
                                             <label htmlFor="namein">Email</label>
                                         </div>
                                     </div>
                                     <div className="row">
                                         <div className="input-field col s8 offset-s2">
-                                            <input id="password" type="password" className="validate" name="password" value={this.state.password} onChange={this.handleChange}/>
+                                            <input id="password" type="password" className="validate" name="password" value={this.state.password} onChange={this.handleChange} />
                                             <label htmlFor="password">Password</label>
                                         </div>
                                     </div>

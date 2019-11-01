@@ -6,7 +6,7 @@ import API from '../../utils/API';
 class Login extends React.Component {
     state = {
         user: "",
-        userIn: "",
+        email: "",
         firstName: "",
         lastName: "",
         password: "",
@@ -27,17 +27,25 @@ class Login extends React.Component {
     handleLogin = (event) => {
         event.preventDefault();
         API.getUsers()
-            .then(testdata =>
-                testdata.map((user) => {
+            .then(users =>
+                users.map((user) => {
                     console.log(user);
-                    
-                    if (user.email === this.state.userIn && user.password === this.state.password) {
-                        alert("Hello " + user.name + "!")
+
+                    if (user.email === this.state.email) {
+                        alert("Email already in use...");
+                        return;
                     }
                 })
             ).catch(err => {
                 console.log(err)
-            })
+            }
+        );
+
+        if (this.state.password != this.state.passwordCheck) {
+            alert("Passwords do not match...");
+            return;
+        }
+
     }
 
     render() {
@@ -61,7 +69,7 @@ class Login extends React.Component {
                                     </div>
                                     <div className="row">
                                         <div className="input-field col s10 offset-s1">
-                                            <input id="name-signin" type="text" className="validate" name="userIn" value={this.state.userIn} onChange={this.handleChange} />
+                                            <input id="name-signin" type="text" className="validate" name="email" value={this.state.email} onChange={this.handleChange} />
                                             <label htmlFor="namein">Enter Email to Sign Up</label>
                                         </div>
                                     </div>
@@ -73,7 +81,7 @@ class Login extends React.Component {
                                         <div className="input-field col m5 s10 offset-s1">
                                             <input id="password2" type="password" className="validate" name="password2" value={this.state.passwordCheck} onChange={this.handleChange} />
                                             <label htmlFor="password2">Verify Password</label>
-                                        </div>  
+                                        </div>
                                     </div>
                                     <div className="row">
                                         <button className="btn waves-effect waves-light col s4 offset-s4" type="submit" name="action" onClick={this.handleLogin}>Signup

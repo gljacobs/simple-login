@@ -6,7 +6,7 @@ import API from '../../utils/API';
 class Login extends React.Component {
     state = {
         user: "",
-        userIn: "",
+        email: "",
         password: "",
     }
     componentDidMount() {
@@ -27,14 +27,17 @@ class Login extends React.Component {
             .then(testdata =>
                 testdata.map((user) => {
                     console.log(user);
-                    
-                    if (user.email === this.state.userIn && user.password === this.state.password) {
+
+                    if (user.email === this.state.email && user.password === this.state.password) {
                         alert("Hello " + user.name + "!")
                     }
                 })
             ).catch(err => {
                 console.log(err)
             })
+            .then(() => {
+                this.setState({ email: "", password: "" });
+            });
     }
 
     render() {
@@ -48,7 +51,7 @@ class Login extends React.Component {
                                 <form id="login" className="col s12 ">
                                     <div className="row">
                                         <div className="input-field col s8 offset-s2">
-                                            <input id="namein" type="text" className="validate" name="userIn" value={this.state.userIn} onChange={this.handleChange} />
+                                            <input id="namein" type="text" className="validate" name="email" value={this.state.email} onChange={this.handleChange} />
                                             <label htmlFor="namein">Email</label>
                                         </div>
                                     </div>

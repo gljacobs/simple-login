@@ -1,13 +1,19 @@
 #signcard {
     text-align: center;
-    width: 50rem;
+    width: 60vw;
 }
 
 .card {
-    margin-top: 7.5rem;
+    margin-top: 17.5vh;
+}
+
+@media screen and (max-width: 950px) {
+    #signcard {
+        width: 90vw;
+    }
 }
 
 .card .card-content .card-title {
-    font-weight: 500;
+    font-weight: bold;
     color: grey !important;
 }

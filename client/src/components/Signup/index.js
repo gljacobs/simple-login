@@ -50,11 +50,11 @@ class Login extends React.Component {
                             <div className="row">
                                 <form id="signup" className="col s12 ">
                                     <div className="row">
-                                        <div className="input-field col s5 offset-s1">
+                                        <div className="input-field col m5 offset-m1 s10 offset-s1">
                                             <input id="first-signin" type="text" className="validate" name="firstIn" value={this.state.firstName} onChange={this.handleChange} />
                                             <label htmlFor="namein">First Name</label>
                                         </div>
-                                        <div className="input-field col s5">
+                                        <div className="input-field col m5 s10 offset-s1">
                                             <input id="last-signin" type="text" className="validate" name="lastIn" value={this.state.lastName} onChange={this.handleChange} />
                                             <label htmlFor="namein">Last Name</label>
                                         </div>
@@ -66,11 +66,11 @@ class Login extends React.Component {
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <div className="input-field col s5 offset-s1">
+                                        <div className="input-field col m5 offset-m1 col s10 offset-s1">
                                             <input id="password1" type="password" className="validate" name="password" value={this.state.password} onChange={this.handleChange} />
                                             <label htmlFor="password">New Password</label>
                                         </div>
-                                        <div className="input-field col s5">
+                                        <div className="input-field col m5 s10 offset-s1">
                                             <input id="password2" type="password" className="validate" name="password2" value={this.state.passwordCheck} onChange={this.handleChange} />
                                             <label htmlFor="password2">Verify Password</label>
                                         </div>  

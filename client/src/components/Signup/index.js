@@ -3,14 +3,14 @@ import './style.css';
 // import testdata from '../../testdata.json'
 import API from '../../utils/API';
 
-class Login extends React.Component {
+class Signup extends React.Component {
     state = {
         user: "",
         email: "",
         firstName: "",
         lastName: "",
         password: "",
-        password: "",
+        passwordCheck: "",
     }
     componentDidMount() {
         // API.createUser("Gabe Jaco", "gj@gmail.com", "password");
@@ -41,7 +41,7 @@ class Login extends React.Component {
             }
         );
 
-        if(this.state.password != this.state.passwordCheck) {
+        if(this.state.password !== this.state.passwordCheck) {
             alert("Passwords do not match...");
             return;
         }
@@ -109,4 +109,4 @@ class Login extends React.Component {
     }
 };
 
-export default Login;
+export default Signup;

@@ -66,7 +66,7 @@ class Login extends React.Component {
                                 </form>
                             </div>
                             <div className="card-action">
-                                <a href="#">Don't have an account? Sign up here</a>
+                                <a href="/signup">Don't have an account? Sign up here</a>
                             </div>
                         </div>
                     </div>

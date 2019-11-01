@@ -1,14 +1,13 @@
-#logcard {
+#signcard {
     text-align: center;
-    width: 35rem;
+    width: 50rem;
 }
 
 .card {
-    margin-top: 10rem;
+    margin-top: 7.5rem;
 }
 
 .card .card-content .card-title {
     font-weight: 500;
     color: grey !important;
 }
-

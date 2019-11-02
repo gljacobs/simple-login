@@ -24,8 +24,9 @@ class Signup extends React.Component {
         this.setState({ [name]: value })
     }
 
-    handleLogin = () => {
+    handleLogin = (event) => {
         if (this.state.firstName && this.state.lastName && this.state.email && this.state.password) {
+            event.preventDefault();
             let valid = true;
 
             API.getUsers()
@@ -53,8 +54,8 @@ class Signup extends React.Component {
                             })
                             .then(() => {
                                 this.setState({ firstName: "", lastName: "", email: "", password: "", passwordCheck: "" });
-                                window.location.href = "/"
-                            });
+                                window.location.href = "/";
+                            })
                     }
                 })
         }

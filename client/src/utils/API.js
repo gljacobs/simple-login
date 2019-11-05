@@ -10,8 +10,8 @@ export default {
         return axios.delete("/api/users/" + id);
     },
     // Get the user from the database
-    getUser: function (id) {
-        return axios.get("/api/users/" + id).then(result => result.data)
+    getUser: function (email) {
+        return axios.get("/api/users/" + email).then(result => result.data)
     },
     // Get users from the database
     getUsers: function () {

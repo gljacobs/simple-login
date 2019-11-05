@@ -7,7 +7,7 @@ module.exports = {
         console.log("Getting user")
         db.Users.findAll({
             where: {
-                id: req.params.id,
+                email: req.params.email,
             }
         }).then(function (user) {
             res.json(user)

@@ -23,16 +23,11 @@ class Login extends React.Component {
 
     handleLogin = (event) => {
         event.preventDefault();
-        API.getUsers()
-            .then(testdata =>
-                testdata.map((user) => {
-                    console.log(user);
-
-                    if (user.email === this.state.email && user.password === this.state.password) {
-                        alert("Hello " + user.name + "!")
-                    }
-                })
-            ).catch(err => {
+        API.getUser(this.state.email, this.state.password)
+            .then((user) => {
+                console.log(user);
+                alert("Hello " + user[0].name + "!");
+            }).catch(err => {
                 console.log(err)
             })
             .then(() => {

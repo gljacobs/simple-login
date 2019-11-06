@@ -29,6 +29,7 @@ class Login extends React.Component {
                 alert("Hello " + user[0].name + "!");
             }).catch(err => {
                 console.log(err)
+                alert("Invalid email or password...")
             })
             .then(() => {
                 this.setState({ email: "", password: "" });

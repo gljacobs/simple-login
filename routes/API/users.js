@@ -6,9 +6,11 @@ router.route("")
     .get(usersController.findAll)
     .post(usersController.create);
 
+router.route("/user")
+    .post(usersController.find);
+    
 // Matches with "/api/users/:id"
 router.route("/:email")
-    .get(usersController.find)
     .delete(usersController.remove);
 
 module.exports = router;

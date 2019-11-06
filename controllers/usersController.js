@@ -4,14 +4,24 @@ const saltRounds = 10;
 
 module.exports = {
     find: function (req, res) {
-        console.log("Getting user")
+        var found;
+
         db.Users.findAll({
             where: {
-                email: req.params.email,
+                email: req.body.email,
             }
-        }).then(function (user) {
-            res.json(user)
-        });
+        }).then(user => {
+            console.log(user[0].name);
+            found = user;
+            return bcrypt.compare(req.body.password, user[0].password)
+        }).then((match) => {
+            if(match){
+                return res.json(found);
+            }
+            else {
+                return res.json("");
+            }
+        })
     },
     findAll: function (req, res) {
         console.log("Getting all users")

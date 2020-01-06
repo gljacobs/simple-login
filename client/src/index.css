@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://undesigns.net/wp-content/uploads/2018/02/3d-pattern-background-Undesigns.jpg");
+  /* background-image: url("https://undesigns.net/wp-content/uploads/2018/02/3d-pattern-background-Undesigns.jpg"); */
+  background-image: url("https://media0.giphy.com/media/jNCT0DtwX6GFG/source.gif");
   background-size: cover;
 }
 
